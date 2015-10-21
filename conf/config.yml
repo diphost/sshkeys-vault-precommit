@@ -1,0 +1,36 @@
+---
+
+hosts:
+        - host: srv.nan-elmoth.ru
+          users:
+                - name: web1
+                  authorized:
+                        - schors
+                - name: web2
+                  authorized:
+                        - schors
+                - name: web3
+                  authorized:
+                        - schors
+                - name: sms
+                  authorized:
+                        - schors
+                - name: door
+                  authorized:
+                        - schors
+                        - adnull
+                        - andrey
+        - host: tools.bz8.ru
+          users:
+                - name: door
+                  authorized:
+                        - adnull
+                        - schors
+        - host: nagios.bz8.ru
+          users:
+                - name: door
+                  authorized:
+                        - adnull
+                        - schors
+                        - andrey
+
