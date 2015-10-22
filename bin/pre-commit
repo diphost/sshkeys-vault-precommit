@@ -57,7 +57,7 @@ if __name__ == '__main__':
                                                                 for l in keys["algs"]:
                                                                         if l["name"] == alg:
                                                                                 l["authorized"] += persons[person["person"]][alg]
-                                        host_conf["users"].append( { "user":user["user"], "keys":keys } )
+                                        host_conf["users"].append( { "user":user["user"] , "algs":keys["algs"] } )
                                 yaml.dump(host_conf, fh, default_flow_style=False, explicit_start=True)
                         os.system("git add " + pwd + '/host_confs/' + host["host"] + '.yml')
         except:
