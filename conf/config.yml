@@ -3,34 +3,34 @@
 hosts:
         - host: srv.nan-elmoth.ru
           users:
-                - name: web1
+                - user: web1
                   authorized:
-                        - schors
-                - name: web2
+                        - person: schors
+                - user: web2
                   authorized:
-                        - schors
-                - name: web3
+                        - person: schors
+                - user: web3
                   authorized:
-                        - schors
-                - name: sms
+                        - person: schors
+                - user: sms
                   authorized:
-                        - schors
-                - name: door
+                        - person: schors
+                - user: door
                   authorized:
-                        - schors
-                        - adnull
-                        - andrey
+                        - person: schors
+                        - person: adnull
+                        - person: andrey
         - host: tools.bz8.ru
           users:
-                - name: door
+                - user: door
                   authorized:
-                        - adnull
-                        - schors
+                        - person: adnull
+                        - person: schors
         - host: nagios.bz8.ru
           users:
-                - name: door
+                - user: door
                   authorized:
-                        - adnull
-                        - schors
-                        - andrey
+                        - person: adnull
+                        - person: schors
+                        - person: andrey
 

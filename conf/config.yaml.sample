@@ -1,37 +1,31 @@
 ---
-
 hosts:
         - host: host1.example.com
           users:
-                - name: ansible
+                - user: admin
                   authorized:
-                        - ansible
-                - name: admin
+                        - person: alice
+                - user: dev1
                   authorized:
-                        - alice
-                - name: dev1
+                        - person: givi
+                        - person: alice
+                - user: dev2
                   authorized:
-                        - givi
-                        - alice
-                - name: dev2
+                        - person: ashot
+                        - person: alice
+                - user: dev3
                   authorized:
-                        - ashot
-                        - alice
-                - name: dev3
-                  authorized:
-                        - ivan
-                        - alice
+                        - person: ivan
+                        - person: alice
         - host: host2.example.com
           users:
-                - name: ansible
+                - user: admin
                   authorized:
-                        - ansible
+                        - person: givi
+                        - person: alice
         - host: nagios.bz8.ru
           users:
-                - name: ansible
-                  authorized:
-                        - ansible
-                - name: admin
+                - user: admin
                   authorized:
                         - alice
 

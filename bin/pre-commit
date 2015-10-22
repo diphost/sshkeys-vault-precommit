@@ -2,8 +2,65 @@
 # -*- coding: utf-8 -*-
 
 import os
+import yaml
 
-print("PWD=%s" % os.getcwd())
-
+if __name__ == '__main__':
+        # save root of repo
+        pwd = os.getcwd()
+        # read config 
+        with open(pwd + '/conf/config.yml', 'r') as f:
+            config = yaml.load(f)
+        # try to proceed
+        try:
+                # person keys cache
+                persons = {}
+                # hosts walk
+                for host in config["hosts"]:
+                        # create new host config
+                        with open(pwd + '/host_confs/' + host["host"] + '.yml', 'w') as fh:
+                                print("Host: %s" % host["host"])
+                                # init host config data
+                                host_conf = { 'users':[] }
+                                # walk for users
+                                for user in host["users"]:
+                                        print("\tUser: %s" % user["user"])
+                                        keys = { "algs":[] }
+                                        # walk for persons
+                                        for person in user["authorized"]:
+                                                print("\t\tPerson: %s" % person["person"])
+                                                # create cache record, if not
+                                                if not persons.has_key(person["person"]):
+                                                        # key algorithms
+                                                        algs = {}
+                                                        # Key dir
+                                                        keydir = pwd + '/keys/' + person["person"]
+                                                        # collect keys
+                                                        if os.path.isdir(keydir):
+                                                                for keyfile in os.listdir(keydir):
+                                                                        print("\t\t\tkey_file: %s" % keyfile)
+                                                                        alg = os.path.splitext(keyfile)[-1][1:]
+                                                                        if not alg:
+                                                                                next
+                                                                        if not algs.has_key(alg):
+                                                                                algs[alg] = []
+                                                                        with open(pwd + '/keys/' + person["person"] + '/' +keyfile) as fk:
+                                                                                for line in fk:
+                                                                                        line = line.strip()
+                                                                                        if line != '':
+                                                                                                algs[alg].append(line)
+                                                                persons[person["person"]] = algs
+                                                # fill keys from cache
+                                                if persons.has_key(person["person"]):
+                                                        for alg in persons[person["person"]].keys():
+                                                                if alg not in keys["algs"]:
+                                                                        keys["algs"].append( { "name":alg, "authorized":[] } )
+                                                                for l in keys["algs"]:
+                                                                        if l["name"] == alg:
+                                                                                l["authorized"] += persons[person["person"]][alg]
+                                        host_conf["users"].append( { "user":user["user"], "keys":keys } )
+                                yaml.dump(host_conf, fh, default_flow_style=False, explicit_start=True)
+                        os.system("git add " + pwd + '/host_confs/' + host["host"] + '.yml')
+        except:
+                raise
 
 
