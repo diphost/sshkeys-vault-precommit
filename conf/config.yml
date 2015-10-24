@@ -20,6 +20,7 @@ hosts:
                         - person: schors
                         - person: adnull
                         - person: andrey
+                        - person: sms
         - host: tools.bz8.ru
           users:
                 - user: door
