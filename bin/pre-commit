@@ -3,6 +3,36 @@
 
 """ Parses the hosts access configuration conf/config.yml and collects 
 per host configs with person's keys
+
+Host access configuration YAML example:
+---
+hosts:
+        - host: host1.example.com
+          users:
+                - user: admin
+                  authorized:
+                        - person: alice
+                - user: dev1
+                  authorized:
+                        - person: givi
+                        - person: ashot
+        - host: host2.example.com
+          users:
+                - user: admin
+                  authorized:
+                        - person: givi
+                        - person: alice
+
+Per host config for host2.example.com example:
+---
+users:
+- algs:
+  - authorized:
+    - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy7zQ==
+      alice@home
+    - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy7zQ==
+      givi@home
+  user: admin
 """
 
 import os
