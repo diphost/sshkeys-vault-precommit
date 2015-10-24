@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """ Parses the hosts access configuration conf/config.yml and collects 
-per host configs with person's keys
+per host configs with person's keys. Python 2.7+ and 3.1+ compatible
 
 Host access configuration YAML example:
 ---
@@ -28,9 +28,9 @@ Per host config for host2.example.com example:
 users:
 - algs:
   - authorized:
-    - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy7zQ==
+    - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJt8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy6zp==
       alice@home
-    - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy7zQ==
+    - ssh-rsa AAAAB3NzaC1yc2EAATTBIwAAAQEAuCZ1ovq6lUwc9me1ENX/JrWVrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hytEQ==
       givi@home
   user: admin
 """
@@ -64,8 +64,13 @@ if __name__ == '__main__':
                                         for person in user["authorized"]:
                                                 print("\t\tPerson: %s" % person["person"])
                                                 # create cache record, if not
-                                                if not persons.has_key(person["person"]):
+                                                if not person["person"] in persons:
                                                         # key algorithms
+                                                        # ---
+                                                        # algs:
+                                                        #       rsa:
+                                                        #               - key1
+                                                        #               - key2
                                                         algs = {}
                                                         # Key dir
                                                         keydir = pwd + '/keys/' + person["person"]
@@ -76,19 +81,25 @@ if __name__ == '__main__':
                                                                         alg = os.path.splitext(keyfile)[-1][1:]
                                                                         if not alg:
                                                                                 next
-                                                                        if not algs.has_key(alg):
+                                                                        if not alg in algs:
                                                                                 algs[alg] = []
                                                                         with open(pwd + '/keys/' + person["person"] + '/' +keyfile) as fk:
                                                                                 for line in fk:
                                                                                         line = line.strip()
                                                                                         if line != '':
                                                                                                 algs[alg].append(line)
+                                                                # ---
+                                                                # persons:
+                                                                #       user1:
+                                                                #               rsa:
+                                                                #                       - key1
+                                                                #                       - key2
                                                                 persons[person["person"]] = algs
                                                 # fill keys from cache
                                                 # do nothing otherwise
-                                                if persons.has_key(person["person"]):
+                                                if person["person"] in persons:
                                                         for alg in persons[person["person"]].keys():
-                                                                if alg not in keys["algs"]:
+                                                                if alg not in map(lambda x: x["name"], keys["algs"]):
                                                                         keys["algs"].append( { "name":alg, "authorized":[] } )
                                                                 for l in keys["algs"]:
                                                                         if l["name"] == alg:
