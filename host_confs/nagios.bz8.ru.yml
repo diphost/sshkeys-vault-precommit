@@ -10,9 +10,9 @@ users:
       andrey@andrey.local-work-2015-09-23
     name: rsa
   - authorized:
-    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
-      schors@home
     - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGbzAPb3aMuBLxMFjEacJeMGan+b4zA3cv4JHyUCyM3nsRmWIcK7zMHN1nbtIk4ywkzs/6/Ya1aqjB47SUwItQY=
       phil@phil-Office
+    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
+      schors@home
     name: ecdsa
   user: door

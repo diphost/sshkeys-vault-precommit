@@ -2,10 +2,10 @@
 users:
 - algs:
   - authorized:
-    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
-      schors@home
     - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGbzAPb3aMuBLxMFjEacJeMGan+b4zA3cv4JHyUCyM3nsRmWIcK7zMHN1nbtIk4ywkzs/6/Ya1aqjB47SUwItQY=
       phil@phil-Office
+    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
+      schors@home
     name: ecdsa
   - authorized:
     - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy7zQ==
@@ -14,10 +14,10 @@ users:
   user: web1
 - algs:
   - authorized:
-    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
-      schors@home
     - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGbzAPb3aMuBLxMFjEacJeMGan+b4zA3cv4JHyUCyM3nsRmWIcK7zMHN1nbtIk4ywkzs/6/Ya1aqjB47SUwItQY=
       phil@phil-Office
+    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
+      schors@home
     name: ecdsa
   - authorized:
     - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy7zQ==
@@ -26,10 +26,10 @@ users:
   user: web2
 - algs:
   - authorized:
-    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
-      schors@home
     - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGbzAPb3aMuBLxMFjEacJeMGan+b4zA3cv4JHyUCyM3nsRmWIcK7zMHN1nbtIk4ywkzs/6/Ya1aqjB47SUwItQY=
       phil@phil-Office
+    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
+      schors@home
     name: ecdsa
   - authorized:
     - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy7zQ==
@@ -38,10 +38,10 @@ users:
   user: web3
 - algs:
   - authorized:
-    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
-      schors@home
     - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGbzAPb3aMuBLxMFjEacJeMGan+b4zA3cv4JHyUCyM3nsRmWIcK7zMHN1nbtIk4ywkzs/6/Ya1aqjB47SUwItQY=
       phil@phil-Office
+    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
+      schors@home
     name: ecdsa
   - authorized:
     - ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAuCZ1ovq6lUwc9me1ENX/Jw7VrDbpIJX8h0c7K25puFLPI9d45HyQNbHYaxy4Arl3yft5JjnOqm8ERDs9Gy0H8RGBBX1/+EhnM/SFyJ7J9+qF0EAgGGF7ID6XDXyXQxilYn6R7mDz02ZCuQtLFY9VGF5lfWKWR10soId+FdIW9prEVHHWSHZnXuc90z0PFarFD4m9vbgK534X/oEDuc2tIkUvOeZomcJaJ/3oVMP4IFpqbTBnf1BuCc1QvywPcjzOCxqkon05Vf5Xi5gfPFJRTkO+CyfqkcACevTuqNWix6623Nte605pNMXmeEoiUcBbI4n5HjUz2x11yGZq2hy7zQ==
@@ -50,10 +50,10 @@ users:
   user: sms
 - algs:
   - authorized:
-    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
-      schors@home
     - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGbzAPb3aMuBLxMFjEacJeMGan+b4zA3cv4JHyUCyM3nsRmWIcK7zMHN1nbtIk4ywkzs/6/Ya1aqjB47SUwItQY=
       phil@phil-Office
+    - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBImELZAlFb5wrVFFFWPs/3Yz4kNT1Gs2Y5JW6gVTmC4fGX2WCYEYWcKL4mBNfzWkgfADsYaWTQieYhqOmu665Eo=
+      schors@home
     - ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBL515guo2KQN3LqgT3Eo8hKpk8pnu3K5rNReubOg8ykZG5m/3/2l77lBr68lLne15Xa6llq8PHGosFRH0h3troU=
       sms@srv.nan-elmoth.ru
     name: ecdsa
@@ -67,8 +67,4 @@ users:
     - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+LH/aBCOuWaKes2itX31M0HGd9NIxJqqFOncS3/wXk1WIoIsH6sgMG0/ZiTCI1yi7CSgoWqTLt/anHmf8GRLE7ONYqUnnFLP5MkUdow3N5DobAvpRpc38qSUrdwLD/HENuWaGavzZVYH8CVExb+ZDHA9zatxabQfwEIdiPAgeZ4tCTShE6IVcS5Fvp7UsrksVEZFRnfX4m5X2feN+8NITNpAAh3ddP2dBk6uFA77GlHTrL3g5HYY76G5n+FDjQLgbpN5FqvLAsN1la4pS43E7VH5UDwqkoKXhpUfgNaQGrumg8FgojvcRUkRZi2M7Jm/CYDijq4abA+Cc3ua4WVUj
       sms@srv.nan-elmoth.ru
     name: rsa
-  - authorized: []
-    name: rsa~
-  - authorized: []
-    name: ecdsa~
   user: door
