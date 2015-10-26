@@ -1,4 +1,4 @@
-ssh-keys-vault - scheme for ssh-keys repository on git
+sshkeys-vault - scheme for ssh-keys repository on git
 ======================================================
 
 Simple scheme for ssh-keys repository on git. Include pre-commit hook to compile YAML host configusration file for https://github.com/diphost/ansible-role-sshkey-access-provisioning
@@ -19,6 +19,7 @@ Features
 Directory structure
 -------------------
 
+```
 bin/
 \____ pre-commit        # source of pre-commit hook
 conf/
@@ -33,6 +34,7 @@ keys/
       \____ home.ecdsa
       \____ office.rsa
       \____ office.ecdsa
+```
 
 Host configuration sample
 -------------------------
