@@ -4,6 +4,11 @@ ssh-keys-vault - scheme for ssh-keys repository on git
 Simple scheme for ssh-keys repository on git. Include pre-commit hook to compile YAML host configusration file for https://github.com/diphost/ansible-role-sshkey-access-provisioning
 
 
+WARNING
+-------
+
+This is a scheme for store and manage really public ssh keys and hosts inventory. Consider this.
+
 Features
 --------
 
