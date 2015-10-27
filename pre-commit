@@ -94,6 +94,9 @@ if __name__ == '__main__':
                                                                 #               rsa:
                                                                 #                       - key1
                                                                 #                       - key2
+                                                                for alg in algs:
+                                                                        if algs[alg].__len__() == 0:
+                                                                                del algs[alg]
                                                                 persons[person["person"]] = algs
                                                 # fill keys from cache
                                                 # do nothing otherwise
@@ -105,7 +108,7 @@ if __name__ == '__main__':
                                                                         if l["name"] == alg:
                                                                                 l["authorized"] += persons[person["person"]][alg]
                                         # fill per host data for user, if keys
-                                        if keys.__len__() >0:
+                                        if keys["algs"].__len__() > 0:
                                                 host_conf["users"].append( { "user":user["user"] , "algs":keys["algs"] } )
                                 # write per host config
                                 yaml.dump(host_conf, fh, default_flow_style=False, explicit_start=True)

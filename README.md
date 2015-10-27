@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 sshkeys-vault - scheme for ssh-keys repository on git
 ======================================================
+=======
+sshkeys-vault-precommit - git pre-commit hook
+=============================================
+>>>>>>> 440bad819f0257217f15c1f3685f8df0b9c752fd
 
-Simple scheme for ssh-keys repository on git. Include pre-commit hook to compile YAML host configusration file for https://github.com/diphost/ansible-role-sshkey-access-provisioning
+Git pre-commit hook for simple ssh-keys git repository (ssh-keys vault).
+Script parses YAML configuration file and compiles per host YAML configurations that includes the required keys.
+Allows to add, remove keys and persons, grant and revoke access to different users different hosts
 
+Uses by https://github.com/diphost/ansible-role-sshkey-access-provisioning for example
 
 WARNING
 -------
@@ -16,6 +24,25 @@ Features
 * Multiple ssh keys for any person
 * Python 2.7+ and 3.1+ compatible
 
+
+Use
+---
+
+* Create required directory structure
+* Put pre-commit script to _bin_ subdirectory
+  You can use git submodules to for script maintance
+* Create _conf/config.yml_ with your inventory
+* Add persons keys
+* Init git repository
+* Create symlink to pre-commit hook:
+  ```shell
+  cd .git/hooks
+  ln -s ../../bin/pre-commit
+  ```
+* Commit changes
+* Adds, removes keys, change config.yml if needed
+* Commit changes
+
 Directory structure
 -------------------
 
@@ -24,16 +51,16 @@ bin/
 \____ pre-commit        # source of pre-commit hook
 conf/
 \____ config.yml        # configuration file
-\____ config.yml.sample # configuration example
 host_confs/             # directory to result host configurations, one per host
 keys/
-\____ alice/
+\____ ashot/
       \_____ home.rsa   # public keys, one per file, openssh format
       \_____ home.ecdsa
 \____ givi/
       \____ home.ecdsa
       \____ office.rsa
       \____ office.ecdsa
+<<<<<<< HEAD
 ```
 
 Host configuration sample
@@ -70,8 +97,9 @@ users:
       givi@office
     name: ecdsa
   user: admin
+=======
+>>>>>>> 440bad819f0257217f15c1f3685f8df0b9c752fd
 ```
-
 
 --
 [![LICENSE WTFPL](wtfpl-badge-1.png)](LICENSE)

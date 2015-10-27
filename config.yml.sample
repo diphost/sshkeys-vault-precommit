@@ -8,24 +8,16 @@ hosts:
                 - user: dev1
                   authorized:
                         - person: givi
-                        - person: alice
-                - user: dev2
-                  authorized:
                         - person: ashot
-                        - person: alice
-                - user: dev3
-                  authorized:
-                        - person: ivan
-                        - person: alice
         - host: host2.example.com
           users:
                 - user: admin
                   authorized:
                         - person: givi
                         - person: alice
-        - host: nagios.bz8.ru
+        - host: host3.example.com
           users:
                 - user: admin
                   authorized:
-                        - alice
+                        - person: alice
 
