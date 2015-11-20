@@ -36,6 +36,7 @@ users:
 """
 
 import os
+import re
 import yaml
 
 if __name__ == '__main__':
@@ -47,6 +48,11 @@ if __name__ == '__main__':
         # try to proceed
         # raise if no
         try:
+                # clear /host_confs/ directory
+                rmfiles = os.listdir(pwd + '/host_confs/')
+                for rmfile in rmfiles:
+                        if re.match(r".*\.yml$",rmfile,re.S|re.U):
+                                os.unlink(pwd + '/host_confs/' + rmfile)
                 # person keys cache
                 persons = {}
                 # hosts walk
