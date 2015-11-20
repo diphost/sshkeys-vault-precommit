@@ -19,14 +19,18 @@ Use
 ---
 
 * Create required directory structure
+* Init git repository
 * Put pre-commit script to _bin_ subdirectory. You can use git submodules to for script maintance
 * Create _conf/config.yml_ with your inventory
 * Add persons keys
-* Init git repository
 * Create symlink to pre-commit hook:
 ```shell
   cd .git/hooks
   ln -s ../../bin/pre-commit
+```
+* Do initial
+```
+  git add .
 ```
 * Commit changes
 * Adds, removes keys, change config.yml if needed
